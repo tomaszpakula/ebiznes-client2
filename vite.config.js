@@ -7,6 +7,9 @@ export default defineConfig({
     hmr: {
       port: 5173,
     },
+    allowedHosts: [
+      'tomaszpakula-client-d7f8dvfxg0g8e5ba.polandcentral-01.azurewebsites.net',
+    ],
   },
   test: {
     environment: "jsdom",
