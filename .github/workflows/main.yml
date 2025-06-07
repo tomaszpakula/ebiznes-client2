@@ -1,11 +1,11 @@
-name: Build and Push React Client
+name: Build, Push and Deploy React Client
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build-and-push:
+  build-push-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +24,11 @@ jobs:
         context: .
         push: true
         tags: tomaszpakula/shop-client:latest
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'tomaszpakula-client'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: 'tomaszpakula/shop-client:latest'
