@@ -39,7 +39,7 @@ export default function useAuth(authData) {
     setSuccess(false);
 
     try {
-      const response = await fetch("http://localhost:9000/login", {
+      const response = await fetch("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

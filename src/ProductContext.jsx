@@ -33,7 +33,7 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    axios("http://localhost:9000/cart", {
+    axios("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/cart", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

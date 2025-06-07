@@ -38,10 +38,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const googleLogin = () => {
-    window.location.href="http://localhost:9000/auth/google/login";
+    window.location.href="https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/auth/google/login";
   };
   const facebookLogin = ()=>{
-    window.location.href="http://localhost:9000/auth/facebook/login";
+    window.location.href="https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/auth/facebook/login";
   }
   return (
     <AuthContext.Provider value={{ user, loading, login, logout, googleLogin, facebookLogin}}>
