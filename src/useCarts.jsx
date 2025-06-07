@@ -6,7 +6,7 @@ export default function useCarts() {
   const { items, setItems } = useContext(ProductContext);
   const { setCartChange } = useContext(ProductContext);
   const clearCart = () => {
-    axios(`http://localhost:9000/cart`, {
+    axios(`https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/cart`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export default function useCarts() {
   };
 
   const addToCart = (productId, quantity) => {
-    axios("http://localhost:9000/cart", {
+    axios("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function useCarts() {
     });
   };
   const removeItem = (id) => {
-    axios(`http://localhost:9000/cart/${id}`, {
+    axios(`https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/cart/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

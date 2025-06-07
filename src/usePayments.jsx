@@ -22,7 +22,7 @@ export default function usePayments() {
       return;
     }
 
-    axios("http://localhost:9000/validate", {
+    axios("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/validate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

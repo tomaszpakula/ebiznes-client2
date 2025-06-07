@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       if (token && token != "undefined") {
         console.log(token);
         try {
-          const res = await axios.get("http://localhost:9000/me", {
+          const res = await axios.get("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/me", {
             headers: { Authorization: `Bearer ${token}` },
           });
           console.log(res.data.username);

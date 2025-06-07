@@ -17,7 +17,7 @@ export const ProductProvider = ({ children }) => {
   const [errorProductMessage, setErrorProductMessage] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:9000/products", {
+      .get("https://tomaszpakula-server-c9ebbge6ajhjfwhp.polandcentral-01.azurewebsites.net/products", {
         headers: {
           "Content-Type": "application/json",
         },
