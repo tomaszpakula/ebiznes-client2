@@ -1,15 +1,16 @@
-FROM node:23-alpine3.20
+# 1. Etap build - budujemy statyczną aplikację
+FROM node:23-alpine3.20 AS build
 
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN npm run build
 
-RUN chown -R node:node /app
-USER node
-RUN chmod -R a+x node_modules/.bin && chmod -R a+x node_modules
+FROM nginx:alpine
 
-EXPOSE 5173
-CMD ["npm", "run", "dev"]
+COPY --from=build /app/dist /usr/share/nginx/html
 
+EXPOSE 80
 
+CMD ["nginx", "-g", "daemon off;"]
